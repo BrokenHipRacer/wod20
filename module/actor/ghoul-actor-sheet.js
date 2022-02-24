@@ -1,8 +1,9 @@
 /* global Dialog, game, mergeObject */
 
-import { MortalActorSheet } from "./mortal-actor-sheet.js";
+import { MortalActorSheet } from './mortal-actor-sheet.js'
 
-import { rollDice } from "./roll-dice.js";
+import { rollDice } from './roll-dice.js'
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {MortalActorSheet}
@@ -10,43 +11,42 @@ import { rollDice } from "./roll-dice.js";
 
 export class GhoulActorSheet extends MortalActorSheet {
   /** @override */
-  static get defaultOptions() {
+  static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "ghoul"],
-      template: "systems/wod20/templates/actor/ghoul-sheet.html",
+      classes: ['vtm5e', 'sheet', 'actor', 'ghoul'],
+      template: 'systems/wod20/templates/actor/ghoul-sheet.html',
       width: 800,
       height: 700,
       tabs: [
         {
-          navSelector: ".sheet-tabs",
-          contentSelector: ".sheet-body",
-          initial: "stats",
-        },
-      ],
-    });
+          navSelector: '.sheet-tabs',
+          contentSelector: '.sheet-body',
+          initial: 'stats'
+        }
+      ]
+    })
   }
 
   /** @override */
-  get template() {
-    if (!game.user.isGM && this.actor.limited)
-      return "systems/wod20/templates/actor/limited-sheet.html";
-    return "systems/wod20/templates/actor/ghoul-sheet.html";
+  get template () {
+    if (!game.user.isGM && this.actor.limited) { return 'systems/wod20/templates/actor/limited-sheet.html' }
+    return 'systems/wod20/templates/actor/ghoul-sheet.html'
   }
 
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
+  getData () {
+    const data = super.getData()
 
-    data.sheetType = `${game.i18n.localize("VTM5E.Ghoul")}`;
+    data.sheetType = `${game.i18n.localize('VTM5E.Ghoul')}`
 
     // Prepare items.
-    if (this.actor.data.type === "ghoul") {
-      this._prepareItems(data);
+    if (this.actor.data.type === 'ghoul') {
+      this._prepareItems(data)
     }
 
-    return data;
+    return data
   }
 
   /**
@@ -56,9 +56,10 @@ export class GhoulActorSheet extends MortalActorSheet {
    * @return {undefined}
    * @override
    */
-  _prepareItems(sheetData) {
-    super._prepareItems(sheetData);
-    const actorData = sheetData.actor;
+
+  _prepareItems (sheetData) {
+    super._prepareItems(sheetData)
+    const actorData = sheetData.actor
 
     const disciplines = {
       abombwe: [],
@@ -66,7 +67,7 @@ export class GhoulActorSheet extends MortalActorSheet {
       auspex: [],
       bardo: [],
       celerity: [],
-      chimerstry:[],
+      chimerstry: [],
       daimonion: [],
       dementation: [],
       dominate: [],
@@ -93,51 +94,51 @@ export class GhoulActorSheet extends MortalActorSheet {
       rituals: [],
       ceremonies: [],
       thaumaturgy: [],
-      necromancy: [],
-    };
+      necromancy: []
+    }
 
     // Iterate through items, allocating to containers
     for (const i of sheetData.items) {
-      if (i.type === "power") {
+      if (i.type === 'power') {
         // Append to disciplines.
         if (i.data.discipline !== undefined) {
-          console.log("that's the discipline", i.data.discipline);
-          disciplines[i.data.discipline].push(i);
+          console.log("that's the discipline", i.data.discipline)
+          disciplines[i.data.discipline].push(i)
           if (!this.actor.data.data.disciplines[i.data.discipline].visible) {
             this.actor.update({
-              [`data.disciplines.${i.data.discipline}.visible`]: true,
-            });
+              [`data.disciplines.${i.data.discipline}.visible`]: true
+            })
           }
         }
       }
     }
 
     // Assign and return
-    actorData.disciplines_list = disciplines;
+    actorData.disciplines_list = disciplines
   }
 
   /* -------------------------------------------- */
 
   /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
+  activateListeners (html) {
+    super.activateListeners(html)
 
     // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
+    if (!this.options.editable) return
 
     // Make Discipline visible
-    html.find(".discipline-create").click(this._onShowDiscipline.bind(this));
+    html.find('.discipline-create').click(this._onShowDiscipline.bind(this))
 
     // Make Discipline hidden
-    html.find(".discipline-delete").click((ev) => {
-      const data = $(ev.currentTarget)[0].dataset;
+    html.find('.discipline-delete').click((ev) => {
+      const data = $(ev.currentTarget)[0].dataset
       this.actor.update({
-        [`data.disciplines.${data.discipline}.visible`]: false,
-      });
-    });
+        [`data.disciplines.${data.discipline}.visible`]: false
+      })
+    })
 
     // Rollable Vampire/Ghouls powers
-    html.find(".power-rollable").click(this._onVampireRoll.bind(this));
+    html.find('.power-rollable').click(this._onVampireRoll.bind(this))
   }
 
   /**
@@ -145,73 +146,74 @@ export class GhoulActorSheet extends MortalActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onShowDiscipline(event) {
-    event.preventDefault();
-    let options = "";
+
+  _onShowDiscipline (event) {
+    event.preventDefault()
+    let options = ''
     for (const [key, value] of Object.entries(
       this.actor.data.data.disciplines
     )) {
       options = options.concat(
         `<option value="${key}">${game.i18n.localize(value.name)}</option>`
-      );
+      )
     }
 
     const template = `
       <form>
           <div class="form-group">
-              <label>${game.i18n.localize("VTM5E.SelectDiscipline")}</label>
+              <label>${game.i18n.localize('VTM5E.SelectDiscipline')}</label>
               <select id="disciplineSelect">${options}</select>
           </div>
-      </form>`;
+      </form>`
 
-    let buttons = {};
+    let buttons = {}
     buttons = {
       draw: {
         icon: '<i class="fas fa-check"></i>',
-        label: game.i18n.localize("VTM5E.Add"),
+        label: game.i18n.localize('VTM5E.Add'),
         callback: async (html) => {
-          const discipline = html.find("#disciplineSelect")[0].value;
+          const discipline = html.find('#disciplineSelect')[0].value
           this.actor.update({
-            [`data.disciplines.${discipline}.visible`]: true,
-          });
-        },
+            [`data.disciplines.${discipline}.visible`]: true
+          })
+        }
       },
       cancel: {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("VTM5E.Cancel"),
-      },
-    };
-
-    new Dialog({
-      title: game.i18n.localize("VTM5E.AddDiscipline"),
-      content: template,
-      buttons: buttons,
-      default: "draw",
-    }).render(true);
-  }
-
-  _onVampireRoll(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
-    const item = this.actor.items.get(dataset.id);
-    const disciplineValue = 1;
-
-    const dice1 =
-      item.data.data.dice1 === "discipline"
-        ? disciplineValue
-        : this.actor.data.data.abilities[item.data.data.dice1].value;
-
-    let dice2;
-    if (item.data.data.dice2 === "discipline") {
-      dice2 = disciplineValue;
-    } else if (item.data.data.skill) {
-      dice2 = this.actor.data.data.skills[item.data.data.dice2].value;
-    } else {
-      dice2 = this.actor.data.data.abilities[item.data.data.dice2].value;
+        label: game.i18n.localize('VTM5E.Cancel')
+      }
     }
 
-    const dicePool = dice1 + dice2;
-    rollDice(dicePool, this.actor, `${item.data.name}`, 0, this.hunger);
+    new Dialog({
+      title: game.i18n.localize('VTM5E.AddDiscipline'),
+      content: template,
+      buttons: buttons,
+      default: 'draw'
+    }).render(true)
+  }
+
+  _onVampireRoll (event) {
+    event.preventDefault()
+    const element = event.currentTarget
+    const dataset = element.dataset
+    const item = this.actor.items.get(dataset.id)
+    const disciplineValue = 1
+
+    const dice1 =
+      item.data.data.dice1 === 'discipline'
+        ? disciplineValue
+        : this.actor.data.data.abilities[item.data.data.dice1].value
+
+    let dice2
+    if (item.data.data.dice2 === 'discipline') {
+      dice2 = disciplineValue
+    } else if (item.data.data.skill) {
+      dice2 = this.actor.data.data.skills[item.data.data.dice2].value
+    } else {
+      dice2 = this.actor.data.data.abilities[item.data.data.dice2].value
+    }
+
+    const dicePool = dice1 + dice2
+    rollDice(dicePool, this.actor, `${item.data.name}`, 0, this.hunger)
   }
 }

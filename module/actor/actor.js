@@ -4,10 +4,12 @@
  * Extend the base Actor type by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
+
 export class VampireActor extends Actor {
   /**
-     * Augment the basic actor data with additional dynamic data.
-     */
+   * Augment the basic actor data with additional dynamic data.
+   */
+
   prepareData () {
     super.prepareData()
 
@@ -21,8 +23,9 @@ export class VampireActor extends Actor {
   }
 
   /**
-     * Prepare Character type specific data
-     */
+   * Prepare Character type specific data
+   */
+
   // _prepareCharacterData(actorData) {
   //     const data = actorData.data;
 
@@ -42,10 +45,11 @@ export class VampireActor extends Actor {
    * @return {Promise<Document>}  A Promise which resolves to the created Document
    * @memberof ClientDocumentMixin
    */
+
   static async createDialog (data = {}, options = {}) {
     // Collect data
     const documentName = this.metadata.name
-    console.log("game.system.documentTypes", game.system.documentTypes)
+    console.log('game.system.documentTypes', game.system.documentTypes)
     console.log('documentName', documentName)
     const types = game.system.documentTypes[documentName]
     const folders = game.folders.filter(f => (f.data.type === documentName) && f.displayed)
