@@ -1,4 +1,163 @@
 {
+  "WOD20.PrimaryDetails.CharacterName": "Name",
+  "WOD20.PrimaryDetails.PlayerName": "Player",
+  "WOD20.PrimaryDetails.Chronicle": "Chronicle",
+
+  "WOD20.PrimaryDetails.Mage.Nature": "Nature",
+  "WOD20.PrimaryDetails.Mage.Demeanor": "Demeanor",
+  "WOD20.PrimaryDetails.Mage.Essence": "Essence",
+  "WOD20.PrimaryDetails.Mage.Affiliation": "Affiliation",
+  "WOD20.PrimaryDetails.Mage.Sect": "Sect",
+  "WOD20.PrimaryDetails.Mage.Concept": "Concept",
+
+  "WOD20.PrimaryDetails.Vampire.Nature": "Nature",
+  "WOD20.PrimaryDetails.Vampire.Demeanor": "Demeanor",
+  "WOD20.PrimaryDetails.Vampire.Concept": "Concept",
+  "WOD20.PrimaryDetails.Vampire.Clan": "Clan",
+  "WOD20.PrimaryDetails.Vampire.Generation": "Generation",
+  "WOD20.PrimaryDetails.Vampire.Sire": "Sire",
+
+  "WOD20.PrimaryDetails.Werewolf.Breed": "Breed",
+  "WOD20.PrimaryDetails.Werewolf.Auspice": "Auspice",
+  "WOD20.PrimaryDetails.Werewolf.Tribe": "Tribe",
+  "WOD20.PrimaryDetails.Werewolf.PackName": "Pack Name",
+  "WOD20.PrimaryDetails.Werewolf.PackTotem": "Pack Totem",
+  "WOD20.PrimaryDetails.Werewolf.Concept": "Concept",
+
+  "WOD20.Commons.Attributes": "Attributes",
+
+  "WOD20.Attributes.Commons.Physical": "Physical",
+
+  "WOD20.Attributes.Physical.Commons.Strength": "Strength",
+  "WOD20.Attributes.Physical.Commons.Dexterity": "Dexterity",
+  "WOD20.Attributes.Physical.Commons.Stamina": "Stamina",
+
+  "WOD20.Attributes.Commons.Social": "Social",
+
+  "WOD20.Attributes.Social.Commons.Charisma": "Charisma",
+  "WOD20.Attributes.Social.Commons.Manipulation": "Manipulation",
+  "WOD20.Attributes.Social.Commons.Appearance": "Appearance",
+
+  "WOD20.Attributes.Commons.Mental": "Mental",
+
+  "WOD20.Attributes.Mental.Commons.Perception": "Perception",
+  "WOD20.Attributes.Mental.Commons.Intelligence": "Intelligence",
+  "WOD20.Attributes.Mental.Commons.Wits": "Wits",
+
+  "WOD20.Commons.Abilities": "Abilities",
+
+  "WOD20.Abilities.Commons.Talents": "Talents",
+
+  "WOD20.Abilities.Talents.Commons.Alertness": "Alertness",
+  "WOD20.Abilities.Talents.Commons.Athletics": "Athletics",
+  "WOD20.Abilities.Talents.Commons.Awareness": "Awareness",
+  "WOD20.Abilities.Talents.Commons.Brawl": "Brawl",
+  "WOD20.Abilities.Talents.Commons.Empathy": "Empathy",
+  "WOD20.Abilities.Talents.Commons.Expression": "Expression",
+  "WOD20.Abilities.Talents.Commons.Intimidation": "Intimidation",
+  "WOD20.Abilities.Talents.Commons.Leadership": "Leadership",
+  "WOD20.Abilities.Talents.Commons.Streetwise": "Streetwise",
+  "WOD20.Abilities.Talents.Commons.Subterfuge": "Subterfuge",
+  "WOD20.Abilities.Talents.Mage.Art": "Art",
+  "WOD20.Abilities.Talents.Werewolf.PrimalUrge": "Primal-Urge",
+
+  "WOD20.Abilities.Commons.Skills": "Skills",
+
+  "WOD20.Abilities.Skills.Commons.Crafts": "Crafts",
+  "WOD20.Abilities.Skills.Commons.Etiquette": "Etiquette",
+  "WOD20.Abilities.Skills.Commons.Stealth": "Stealth",
+  "WOD20.Abilities.Skills.Commons.Survival": "Survival",
+  "WOD20.Abilities.Skills.Commons.Modern.Drive": "Drive",
+  "WOD20.Abilities.Skills.Commons.Modern.Firearms": "Firearms",
+  "WOD20.Abilities.Skills.Commons.Modern.MartialArts": "Martial Arts",
+  "WOD20.Abilities.Skills.Commons.Modern.Research": "Research",
+  "WOD20.Abilities.Skills.Commons.Modern.Technology": "Technology",
+  "WOD20.Abilities.Skills.Mage.Meditation": "Meditation",
+  "WOD20.Abilities.Skills.Vampire.Classical.AnimalKen": "Animal Ken",
+  "WOD20.Abilities.Skills.Vampire.Classical.Archery": "Archery",
+  "WOD20.Abilities.Skills.Vampire.Classical.Commerce": "Commerce",
+  "WOD20.Abilities.Skills.Vampire.Classical.Performance": "Performance",
+  "WOD20.Abilities.Skills.Vampire.Classical.Melee": "Melee",
+  "WOD20.Abilities.Skills.Vampire.Classical.Ride": "Ride",
+  "WOD20.Abilities.Skills.Werewolf.AnimalKen": "Animal Ken",
+  "WOD20.Abilities.Skills.Werewolf.Larceny": "Larceny",
+  "WOD20.Abilities.Skills.Werewolf.Performance": "Performance",
+
+  "WOD20.Abilities.Commons.Knowledges": "Knowledges",
+
+  "WOD20.Abilities.Knowledges.Commons.Academics": "Academics",
+  "WOD20.Abilities.Knowledges.Commons.Investigation": "Investigation",
+  "WOD20.Abilities.Knowledges.Commons.Law": "Law",
+  "WOD20.Abilities.Knowledges.Commons.Medicine": "Medicine",
+  "WOD20.Abilities.Knowledges.Commons.Politics": "Politics",
+  "WOD20.Abilities.Knowledges.Commons.Modern.Computers": "Computers",
+  "WOD20.Abilities.Knowledges.Commons.Modern.Occult": "Occult",
+  "WOD20.Abilities.Knowledges.Commons.Modern.Science": "Science",
+  "WOD20.Abilities.Knowledges.Mage.Cosmology": "Cosmology",
+  "WOD20.Abilities.Knowledges.Mage.Esoterica": "Esoterica",
+  "WOD20.Abilities.Knowledges.Vampire.Classical.HeartWisdom": "Heart Wisdom",
+  "WOD20.Abilities.Knowledges.Vampire.Classical.Occultism": "Occultism",
+  "WOD20.Abilities.Knowledges.Vampire.Classical.Philosophy": "Philosophy",
+  "WOD20.Abilities.Knowledges.Vampire.Classical.Ritualistics": "Ritualistics",
+  "WOD20.Abilities.Knowledges.Vampire.Classical.Religion": "Religion",
+
+  "WOD20.Spheres": "Spheres",
+  "WOD20.Spheres.Correspondence": "Correspondence",
+  "WOD20.Spheres.Entropy": "Entropy",
+  "WOD20.Spheres.Forces": "Forces",
+  "WOD20.Spheres.Life": "Life",
+  "WOD20.Spheres.Matter": "Matter",
+  "WOD20.Spheres.Mind": "Mind",
+  "WOD20.Spheres.Prime": "Prime",
+  "WOD20.Spheres.Spirit": "Spirit",
+  "WOD20.Spheres.Time": "Time",
+
+  "WOD20.Advantages": "Advantages",
+
+  "WOD20.Advantages.Disciplines": "Disciplines",
+  "WOD20.Advantages.Backgrounds": "Backgrounds",
+  "WOD20.Advantages.Virtues": "Virtues",
+  "WOD20.Advantages.OtherTraits": "Other Traits",
+
+  "WOD20.Advantages.Classical.Conscience": "Conscience / Conviction / Reflection",
+  "WOD20.Advantages.Classical.SelfControl": "Self Control / Instinct / Wisdom",
+  "WOD20.Advantages.Classical.Courage": "Courage",
+
+  "WOD20.Advantages.Mage.Arete": "Arete",
+  "WOD20.Advantages.Mage.Quintessence": "Quintessence",
+
+  "WOD20.Advantages.Vampire.BloodPool": "Blood Pool",
+  "WOD20.Advantages.Vampire.PointsPerTurn": "Points Per Turn",
+  "WOD20.Advantages.Vampire.Classical.Philosophy": "Philosophy",
+  "WOD20.Advantages.Vampire.Classical.Philosophy.Aura": "Aura",
+
+  "WOD20.Advantages.Werewolf.Gifts": "Gifts",
+  "WOD20.Advantages.Werewolf.Renown": "Renown",
+  "WOD20.Advantages.Werewolf.Glory": "Glory",
+  "WOD20.Advantages.Werewolf.Honor": "Honor",
+  "WOD20.Advantages.Werewolf.Wisdom": "Wisdom",
+  "WOD20.Advantages.Werewolf.Rage": "Rage",
+  "WOD20.Advantages.Werewolf.Gnosis": "Gnosis",
+
+  "WOD20.Advantages.Commons.Willpower": "Willpower",
+
+  "WOD20.Health.Name.Vitality": "Vitality",
+  "WOD20.Health.Name.Health": "Health",
+  "WOD20.Health.Status.Bruised": "Bruised",
+  "WOD20.Health.Status.Hurt:": "Hurt",
+  "WOD20.Health.Status.Injured": "Injured",
+  "WOD20.Health.Status.Wounded": "Wounded",
+  "WOD20.Health.Status.Mauled": "Mauled",
+  "WOD20.Health.Status.Crippled": "Crippled",
+  "WOD20.Health.Status.Incapacitated": "Incapacitated",
+
+  "WOD20.Vampire.Commons.Weakness": "Weakness",
+
+  "WOD20.Commons.Experience": "Experience",
+
+
+
+
   "VTM5E.Name": "Name",
   "VTM5E.Clan": "Clan",
   "VTM5E.Predator": "Predator",
@@ -247,5 +406,4 @@
   "VTM5E.ResistingRötschreck" : "Resisting Rötschreck", 
   "VTM5E.ResistingFrenzy": "Resisting Frenzy", 
   "VTM5E.Healthy" : "Healthy"
-
 }
